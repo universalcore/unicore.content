@@ -11,6 +11,4 @@ Generate the models from the Avro_ schema::
         ./unicore/Category.avro.json \
         ./unicore/Localisation.avro.json \
         --map-field uuid=elasticgit.models.UUIDField \
-        --rename-model GitPageModel=Page \
-        --rename-model GitCategoryModel=Category \
         > ./unicore/content/models.py
