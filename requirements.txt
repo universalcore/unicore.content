@@ -1,1 +1,1 @@
-elastic-git
+elastic-git>=1.0.0
