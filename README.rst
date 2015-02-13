@@ -5,10 +5,6 @@ unicore.content
     :target: https://travis-ci.org/universalcore/unicore.content
     :alt: Continuous Integration
 
-.. image:: https://coveralls.io/repos/universalcore/unicore.content/badge.png?branch=develop
-    :target: https://coveralls.io/r/universalcore/unicore.content?branch=develop
-    :alt: Code Coverage
-
 Generate the models from the Avro_ schema::
 
     $ virtualenv ve
