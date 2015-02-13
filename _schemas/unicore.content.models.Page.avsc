@@ -32,7 +32,10 @@
       "name": "modified_at"
     },
     {
-      "type": "array",
+      "type": {
+        "type": "array",
+        "items": ["string"]
+      },
       "name": "linked_pages"
     },
     {
@@ -83,7 +86,10 @@
       ]
     },
     {
-      "type": "array",
+      "type": {
+        "type": "array",
+        "items": ["string"]
+      },
       "name": "author_tags",
       "items": "string",
       "default": []

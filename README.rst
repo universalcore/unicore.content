@@ -7,8 +7,8 @@ Generate the models from the Avro_ schema::
     $ source ve/bin/activate
     (ve)$ pip install elastic-git
     (ve)$ eg-tools load-schema \
-        ./unicore/Page.avro.json \
-        ./unicore/Category.avro.json \
-        ./unicore/Localisation.avro.json \
+        ./_schemas/unicore.content.models.Page.avsc \
+        ./_schemas/unicore.content.models.Category.avsc \
+        ./_schemas/unicore.content.models.Localisation.avsc \
         --map-field uuid=elasticgit.models.UUIDField \
         > ./unicore/content/models.py

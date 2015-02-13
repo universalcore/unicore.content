@@ -9,7 +9,7 @@
 # VERSION INFO:
 #
 #   package:          elastic-git
-#   package_version:  0.3.3
+#   package_version:  0.3.7
 #   language_version: 2.7.8
 #
 
@@ -17,7 +17,7 @@ from elasticgit import models
 
 
 class Page(models.Model):
-    
+
     subtitle = models.TextField("""subtitle""")
     description = models.TextField("""description""")
     language = models.TextField("""language""")
@@ -25,7 +25,9 @@ class Page(models.Model):
     created_at = models.TextField("""created_at""")
     published = models.BooleanField("""published""")
     modified_at = models.TextField("""modified_at""")
-    linked_pages = models.ListField("""linked_pages""")
+    linked_pages = models.ListField("""linked_pages""", fields=(
+        models.TextField('string'),
+    ))
     slug = models.TextField("""slug""")
     content = models.TextField("""content""")
     source = models.TextField("""source""")
@@ -36,13 +38,16 @@ class Page(models.Model):
     primary_category = models.TextField("""primary_category""")
     image = models.TextField("""image""")
     image_host = models.TextField("""image_host""")
-    uuid = models.UUIDField("""uuid""", fallbacks=[models.SingleFieldFallback('id'),])
-    author_tags = models.ListField("""author_tags""", default=[])
-
+    uuid = models.UUIDField(
+        """uuid""", fallbacks=[models.SingleFieldFallback('id'), ])
+    author_tags = models.ListField(
+        """author_tags""", default=[], fields=(
+            models.TextField('string'),
+        ))
 
 
 class Category(models.Model):
-    
+
     subtitle = models.TextField("""subtitle""")
     language = models.TextField("""language""")
     title = models.TextField("""title""")
@@ -53,11 +58,12 @@ class Category(models.Model):
     slug = models.TextField("""slug""")
     image = models.TextField("""image""")
     image_host = models.TextField("""image_host""")
-    uuid = models.UUIDField("""uuid""", fallbacks=[models.SingleFieldFallback('id'),])
+    uuid = models.UUIDField(
+        """uuid""", fallbacks=[models.SingleFieldFallback('id'), ])
 
 
 class Localisation(models.Model):
-    
+
     locale = models.TextField("""locale""")
     image = models.TextField("""image""")
     image_host = models.TextField("""image_host""")
