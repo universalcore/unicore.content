@@ -1,0 +1,21 @@
+language: python
+python:
+  - "2.7"
+  - "pypy"
+install:
+  - pip install pytest
+  - pip install pytest-cov
+  - pip install -e .
+  - pip install coveralls
+script:
+  - py.test unicore -s --cov ./unicore
+after_success:
+  - coveralls
+deploy:
+  provider: pypi
+  user: Praekelt
+  password:
+    secure: "huBRtDkL1mCwDTBxSs7R9VNqc+asLw389WMsZ43uzFSpYa4HnCjN6EtL+qa8RPP2O+3a5jNcolx7BeS5blKKfoizgg8Itl08hHxwBPkn1pUe66nCzq8U7ghWmchh+qIdlHJKS1e4uhIVgjmrBRNFwulaEGxlVqcNVsocX4DEABM="
+  on:
+    tags: true
+    all_branches: true
