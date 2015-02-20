@@ -9,8 +9,8 @@
 # VERSION INFO:
 #
 #   package:          elastic-git
-#   package_version:  0.3.7
-#   language_version: 2.7.8
+#   package_version:  1.0.0
+#   language_version: 2.7.6
 #
 
 from elasticgit import models
@@ -67,3 +67,7 @@ class Localisation(models.Model):
     locale = models.TextField("""locale""")
     image = models.TextField("""image""")
     image_host = models.TextField("""image_host""")
+    logo_image = models.TextField("""logo_image""")
+    logo_image_host = models.TextField("""logo_image_host""")
+    logo_text = models.TextField("""logo_text""")
+    logo_description = models.TextField("""logo_description""")
